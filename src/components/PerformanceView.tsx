@@ -67,7 +67,7 @@ export const PerformanceView: React.FC<PerformanceViewProps> = ({ currentRuntime
             <span>Developer Telemetry & Diagnostics</span>
           </h2>
           <p className="text-xs text-slate-400 mt-1">
-            Real measured latency, memory allocation, and Snapdragon edge integration interface validation.
+            Real measured latency, memory allocation, and Snapdragon AI Hub adapter interface (no physical NPU validation).
           </p>
         </div>
 

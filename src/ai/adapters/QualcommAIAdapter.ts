@@ -20,7 +20,11 @@ export class QualcommAIAdapter implements AIEngine {
   // Based on actual Qualcomm AI Hub pre-optimized models:
   // - EasyOCR: https://aihub.qualcomm.com/models/easyocr (80+ languages, Snapdragon X Elite/Plus supported)
   // - TrOCR: https://aihub.qualcomm.com/models/trocr (Transformer-based OCR, 320x320 input)
-  // - MobileNet-v2: https://aihub.qualcomm.com/models/mobilenet_v2 (Object detection backbone)
+  // - MobileNet-v2: https://aihub.qualcomm.com/models/mobilenet_v2 (Image classification backbone)
+  //
+  // NOTE: Latency values below are NOT measured on actual Snapdragon hardware.
+  // No Snapdragon NPU hardware is available in this x86_64 development environment.
+  // These are reference specifications from Qualcomm AI Hub documentation only.
   private registeredModels: QualcommModelTarget[] = [
     {
       modelId: 'qualcomm/easyocr',
@@ -29,7 +33,6 @@ export class QualcommAIAdapter implements AIEngine {
       targetHardware: 'Hexagon NPU',
       quantization: 'INT8',
       inputResolution: [608, 800],
-      expectedLatencyNpuMs: 150,
     },
     {
       modelId: 'qualcomm/trocr',
@@ -38,16 +41,14 @@ export class QualcommAIAdapter implements AIEngine {
       targetHardware: 'Hexagon NPU',
       quantization: 'INT8',
       inputResolution: [320, 320],
-      expectedLatencyNpuMs: 120,
     },
     {
       modelId: 'qualcomm/mobilenet_v2',
-      modelName: 'MobileNet-v2 - Object Detection Backbone',
+      modelName: 'MobileNet-v2 - Image Classification Backbone',
       targetRuntime: 'QNN',
       targetHardware: 'Hexagon NPU',
       quantization: 'INT8',
-      inputResolution: [640, 640],
-      expectedLatencyNpuMs: 50,
+      inputResolution: [224, 224],
     },
   ];
 

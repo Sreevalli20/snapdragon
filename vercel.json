@@ -23,5 +23,10 @@
   "env": {
     "GEMINI_API_KEY": "@gemini_api_key",
     "APP_URL": "@app_url"
+  },
+  "build": {
+    "env": {
+      "GEMINI_API_KEY": "@gemini_api_key"
+    }
   }
 }
