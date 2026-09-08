@@ -1,0 +1,11 @@
+{
+  "name": "SnapOps Vision",
+  "description": "Privacy-first multimodal operations and inspection copilot designed for Snapdragon-powered HP PCs with real-time camera perception, local OCR, voice guidance, SOP verification, and evidence reporting.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
